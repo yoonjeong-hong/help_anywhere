@@ -1,0 +1,117 @@
+// Place all the styles related to the Posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+select{
+    margin-top: 5px;
+    margin-left: 10px;
+    padding: 0px 5px;
+    height: 30px;
+    font-size: 20px;
+}
+table{
+    width: 1000px;
+    table-layout: fixed;
+    word-break: break-all;
+    font-size: 20px;
+}
+.region{
+    width: 100px;
+    text-align: center;
+}
+.title{
+    width: 600px;
+    text-align: left;
+}
+.user{
+    text-align: left;
+}
+.form-inputs:hover{
+    text-decoration:none !important
+}
+td{
+    text-align: left;
+    font-size: 50px;
+}
+thead{
+    text-align: center;
+}
+.m{
+    width:100px;
+}
+.right{
+    text-align: right;
+}
+#logo{
+    position: absolute;
+    margin-top: 10px;
+    width: 150px;
+    height: 80px;
+}
+
+#header{
+    background: no-repeat center center;
+    background-attachment: scroll;
+    background-size: 100% 100%;
+    padding: 100px 50px;
+    color: white;
+}
+#header_text1{
+      
+      margin-top: 5px;
+      font-size: 70px;
+      font-family: Verdana;
+      margin: 20px 0 0;
+}
+#header_text2{
+     font-size: 40px;
+      font-weight: 300;
+      line-height: 1.1;
+      display: block;
+      margin: 20px 0 0;
+      font-family: Verdana;
+
+}
+#button_type1{
+    border-radius: 10%;
+    margin-left: 8%;
+    margin-top: 2%;
+    width: 50px;
+    height: 50px;
+    float:left;
+}
+#button_type2{
+    border-radius: 10%;
+    margin-left: 5%;
+    margin-top: 2%;
+    width: 50px;
+    height: 50px;
+    float:left;
+}
+.button_font{
+    margin-left: 15%;
+    margin-top: 2%;
+    font-size: 35px;
+    font-family: sans-serif;
+    font-weight: bold;
+    color:white ;
+
+}
+.request_link:hover {
+    background-color: yellow;
+    text-decoration:none !important;
+}
+#login{
+    float:right; margin-top: 15px; margin-right:5px; width: 100px; height: 60px;
+}
+#signin{
+    float:right; margin-top: 15px; width: 100px; height: 60px;
+}
+.b{
+    background: no-repeat center center;
+    background-attachment: scroll;
+    background-image: url("main.png");
+    background-size: 100% 100%;
+}
+
+

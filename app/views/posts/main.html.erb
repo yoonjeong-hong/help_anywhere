@@ -1,0 +1,57 @@
+<html>																																								
+<head lang="ko">
+	<meta charset="UTF-8"> 
+	<title>Help Anywhere</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+</head>
+
+<div class="b">
+		<a href="/posts" data-method="get">
+        <%= image_tag("logo.png", id: "logo") %>
+   	</a>
+   	<a href="/users/sign_in" data-method="get">
+         <%= image_tag("login.png", id: "login") %>
+   	</a>
+   	<a href="/users/sign_up" data-method="get">
+         <%= image_tag("signin.png", id: "signin") %>
+   	</a>
+
+    <div id="header">
+        <STRONG>
+        	<h1 id="header_text1"> Help Anywhere </h1>
+        	<h2 id="header_text2"> :언제 어디서나! </h2>
+        </STRONG>
+    </div>
+<br>
+<br>
+  		<div class="row">
+  		<form action="posts#index" >
+ 			<div class="col-xs-6">
+   			<a class="request_link" href="/posts">
+   				<div style="margin-left: 30%; width: 380px; height: 70px; background-color: rgba(0, 0, 0, 0.2);">
+           			<CENTER>
+                        <%= image_tag("request.jpg", id: "button_type1") %>
+           				<p style="font-size: 2px;">　</p>
+           				<h5 class="button_font"> 요청 하러가기!</h5>
+           			</CENTER>
+   				</div>
+   			</a>
+   			</div>
+      </form>
+
+      <form action="posts#index" >
+   			<div class="col-xs-6">
+   					<a class="request_link" href="/posts">
+   						<div style=" margin-right: 30%; width: 380px; height: 70px; background-color: rgba(0, 0, 0, 0.2);">
+   						<CENTER>
+                            <%= image_tag("inform.png", id: "button_type2") %>
+           					<p style="font-size: 2px;">　</p>
+           					<h5 class="button_font">   요청 받으러 가기!</h5>
+           				</CENTER>
+      					</div>
+      				</a>
+ 			</div>
+  		</form>
+  		</div>
+</div>
+</html>

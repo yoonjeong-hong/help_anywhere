@@ -1,0 +1,95 @@
+
+<p id="notice"><%= notice %></p>
+
+<%= image_tag("k.jpg", width: "100%") %>
+
+<center>
+  <table>
+      <thead>
+      <tr>
+        <th align="left">
+          <form action="/posts/filter/region">
+            <div class="field">
+              <select name="region">
+      <option selected="true" disabled="disabled"><%= @curregion %></option>
+              <option value="서울전체">서울전체</option>
+              <option value="강남구">강남구</option>
+              <option value="강동구">강동구</option>
+              <option value="강북구">강북구</option>
+              <option value="강서구">강서구</option>
+              <option value="관악구">관악구</option>
+              <option value="광진구">광진구</option>
+              <option value="구로구">구로구</option>
+              <option value="금천구">금천구</option>
+              <option value="노원구">노원구</option>
+              <option value="도봉구">도봉구</option>
+              <option value="동대문구">동대문구</option>
+              <option value="동작구">동작구</option>
+              <option value="마포구">마포구</option>
+              <option value="서대문구">서대문구</option>
+              <option value="서초구">서초구</option>
+              <option value="성동구">성동구</option>
+              <option value="성북구">성북구</option>
+              <option value="송파구">송파구</option>
+              <option value="양천구">양천구</option>
+              <option value="영등포구">영등포구</option>
+              <option value="용산구">용산구</option>
+              <option value="은평구">은평구</option>
+              <option value="종로구">종로구</option>
+              <option value="중구">중구</option>
+              <option value="중랑구">중랑구</option>
+              </select>
+            <input type="submit" value="선택">
+          </th>
+        </div>
+      </form>
+      <th align="right" colspan="4">
+        <%= link_to 'New Post', new_post_path %>
+      </th>
+    </tr>
+  </thead>
+  </table>
+  <table>
+
+    <thead>
+      <tr>
+        <th class="region">지 역</th>
+        <th class="title">제 목</th>
+        <th class="user">글쓴이</th>
+        <th colspan="2" class="m"></th>
+      </tr>
+    </thead>
+  
+    <tbody>
+      <% @posts.each do |post| %>
+        <% @users.each do |u| %>
+        <tr>
+          <% tit = post.title %>
+          <% puid = post.user_id %>
+          <% uid = u.id %>
+          
+          <% if puid == uid %>
+            <td class="region"><p><%= post.region %></p></td>
+            <td class="title"><%= link_to tit, post %></td>
+            <td class="user"><%= u.name %></td>
+            <td class="region"><%= link_to '수정', edit_post_path(post) %></td>
+            <td class="region"><%= link_to '삭제', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <% end %>
+        </tr>
+        <% end %>
+      <% end %>
+    </tbody>
+  </table>
+  <table>
+    <tr>
+      <td colspan="5" class="right">
+        <%if user_signed_in? %>
+          <%= link_to 'Sign out',  destroy_user_session_path, method: 'delete' %>
+        <% else %>
+          <%= link_to 'Sign in', new_user_session_path %>
+          <%= link_to  'Sign up',  new_user_registration_path %>
+        <% end %>
+      </td>
+    </tr>
+  </table>
+</center>

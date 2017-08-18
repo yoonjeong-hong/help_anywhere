@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<%= image_tag("k.jpg", width: "100%") %>
+
+<p>작성자: <a href="/users/<%= @post.user_id%>" data-method="get"><%#=@post.user_id%> <%=@user.email%> </a> </p>
+ <!--post유저의 id를 보여주고 클릭하면 해당 user의 정보로 넘어간다-->
+
+<p>
+  <strong>Title:</strong>
+  <%= @post.title %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @post.content %>
+</p>
+
+<hr>
+<h3>댓글쓰기.</h3>
+
+<form  method="get" action="/posts/<%= @post.id %>/comments/create">
+     <input tpye="text" name="input_comment">
+    <input type="submit">
+</form>
+</hr>
+
+<hr>댓글창</hr>
+<% @comments.each do |comment| %>
+     <table>
+         <tr>
+             <td><a href="/users/<%= comment.user_id%>"data-method="get"> <%=@user.email%> </a></td>
+             <td><%=comment.content %> </td>
+             <td><a href="/posts/<%=@post.id %>/comments/destroy/<%=comment.id %>" data-confirm="댓글 삭제할거니?" data-method="post"> [x]</a></td>
+         </tr>
+     </table>
+<% end %>
+
+<%= link_to 'Edit', edit_post_path(@post) %> |
+<%= link_to 'Back', posts_path %>
