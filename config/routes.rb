@@ -1,13 +1,19 @@
 Rails.application.routes.draw do
     
-    get '/posts/main' => 'posts#main'
+    
+    
     resources :posts
     devise_for :users
-    #root "posts#main"
-    root 'posts#index'
+    
+    root "posts#main"
+    
+    
+    
+    get '/posts/main/1' => 'posts#main'
+   
     get '/posts/filter/region' => 'posts#filter'
     
-    get 'users/view_user_info'
+    
     #comment  
       ##create
       get '/posts/:id/comments/create' => 'comments#create'

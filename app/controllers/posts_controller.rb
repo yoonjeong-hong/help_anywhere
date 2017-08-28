@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  load_and_authorize_resource
+  # load_and_authorize_resource
 
   before_action :set_post, only: [:show, :edit, :update, :destroy]
 
@@ -22,6 +22,7 @@ class PostsController < ApplicationController
      @user = User.find(@post.user_id)
   end
   #지역필터링을하면
+
   def filter
     @users = User.all
     if params[:region] == '서울전체'

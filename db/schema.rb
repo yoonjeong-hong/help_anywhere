@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(version: 20170818201034) do
   add_index "roles", ["name"], name: "index_roles_on_name"
 
   create_table "users", force: :cascade do |t|
+    t.string   "name"
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
@@ -54,7 +55,6 @@ ActiveRecord::Schema.define(version: 20170818201034) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
-    t.string   "name"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

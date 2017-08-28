@@ -5,13 +5,13 @@ class Ability
     # Define abilities for the passed in user here. For example:
     #
     #   user ||= User.new # guest user (not logged in)
-      if user.nil?
-        can [:read, :filter], :all
-      else
-        #로그인한 경우에만 
-        can [:read, :create, :filter], :all
-        can [:update, :destroy], Post , user_id: user.id
-      end 
+      # if user.nil?
+      #   can [:read, :filter], :all
+      # else
+      #   #로그인한 경우에만 
+      #   can [:read, :create, :filter], :all
+      #   can [:update, :destroy], Post , user_id: user.id
+      # end 
     #
     # The first argument to `can` is the action you are giving the user
     # permission to do.

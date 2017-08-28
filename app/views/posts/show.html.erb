@@ -2,7 +2,7 @@
 
 <%= image_tag("k.jpg", width: "100%") %>
 
-<p>작성자: <a href="/users/<%= @post.user_id%>" data-method="get"><%#=@post.user_id%> <%=@user.email%> </a> </p>
+<p>작성자: <a href="/users/<%= @post.user_id%>" data-method="get"> <%=@user.name%> </a> </p>
  <!--post유저의 id를 보여주고 클릭하면 해당 user의 정보로 넘어간다-->
 
 <p>
