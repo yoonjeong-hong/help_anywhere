@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  
   # load_and_authorize_resource
 
   before_action :set_post, only: [:show, :edit, :update, :destroy]
@@ -76,6 +77,7 @@ class PostsController < ApplicationController
 
   # DELETE /posts/1
   # DELETE /posts/1.json
+  
   def destroy
     @post.destroy
     respond_to do |format|
